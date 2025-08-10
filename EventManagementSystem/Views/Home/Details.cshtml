@@ -1,0 +1,21 @@
+﻿@model EventManagementSystem.Models.Event
+
+<h1>@Model.Name</h1>
+<p><strong>Date:</strong> @Model.StartAt.ToString("g")</p>
+<p><strong>Venue:</strong> @Model.VenueName</p>
+<hr />
+<p>@Model.Detail</p>
+<hr />
+
+<h3>Tickets</h3>
+@if (Model.TicketTypes.Any())
+{
+    <form asp-controller="Tickets" asp-action="Register" method="post">
+        <input type="hidden" name="eventId" value="@Model.Id" />
+        <button type="submit" class="btn btn-success">Register for this Event</button>
+    </form>
+}
+else
+{
+    <p>Registration not available.</p>
+}

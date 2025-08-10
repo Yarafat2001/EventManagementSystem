@@ -1,0 +1,96 @@
+/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+:root {
+    --primary-color: #6a1b9a; 
+    --primary-hover-color: #4a148c;
+    --secondary-color: #ffc107; 
+    --background-color: #f8f9fa; 
+    --card-background-color: #ffffff;
+    --text-color: #343a40;
+    --light-text-color: #6c757d;
+    --footer-background: #212529;
+    --border-color: #dee2e6;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: var(--primary-hover-color);
+        border-color: var(--primary-hover-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+/* Event Cards */
+.event-card {
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--card-background-color);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hero-background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 8rem 0;
+    margin-bottom: 2rem;
+}
+
+/
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--card-background-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(106, 27, 154, 0.25);
+}
+
+
+.table {
+    vertical-align: middle;
+}
+
+    .table thead {
+        color: var(--primary-color);
+    }
+
+.footer {
+    background-color: var(--footer-background);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+    .footer a {
+        color: rgba(255, 255, 255, 0.9);
+    }

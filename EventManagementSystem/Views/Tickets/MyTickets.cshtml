@@ -1,0 +1,34 @@
+﻿@model IEnumerable<EventManagementSystem.Models.Ticket>
+
+@{
+    ViewData["Title"] = "My Tickets";
+}
+
+<div class="container py-5 text-white">
+    <h1 class="display-5 mb-4">My Tickets</h1>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="list-group">
+            @foreach (var ticket in Model)
+            {
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white mb-3 border-secondary rounded">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">@ticket.TicketType.Event.Name</h5>
+                        <small>Purchased: @ticket.PurchaseDate.ToString("d")</small>
+                    </div>
+                    <p class="mb-1">Ticket Type: @ticket.TicketType.Name</p>
+                    <small>Event Date: @ticket.TicketType.Event.StartAt.ToString("f")</small>
+                </a>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center p-5 empty-state">
+            <h2 class="display-6">No Tickets Found</h2>
+            <p class="lead text-muted">You have not purchased any tickets yet. Browse our events to get started!</p>
+            <a class="btn btn-primary btn-lg mt-3" asp-controller="Home" asp-action="Index">Browse Events</a>
+        </div>
+    }
+</div>
